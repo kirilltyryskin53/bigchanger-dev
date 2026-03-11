@@ -3,39 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>О проекте — BigChanger Dev</title>
+    <title>BigChanger Dev About</title>
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body>
     <header class="header">
       <div class="container nav">
-        <a class="brand" href="index.html">BigChanger Dev</a>
+        <a class="brand" href="index.html" data-i18n="brand">BigChanger Dev</a>
         <nav class="nav-links">
-          <a class="nav-link" href="index.html">Главная</a>
-          <a class="nav-link" href="developers.html">Каталог</a>
-          <a class="nav-link" href="submit.html">Добавить профиль</a>
-          <a class="nav-link active" href="about.html">О проекте</a>
+          <a class="nav-link" href="index.html" data-i18n="nav_home">Главная</a>
+          <a class="nav-link" href="developers.html" data-i18n="nav_catalog">Каталог</a>
+          <a class="nav-link" href="submit.html" data-i18n="nav_submit">Добавить профиль</a>
+          <a class="nav-link active" href="about.html" data-i18n="nav_about">О проекте</a>
+          <button class="nav-link" data-lang="ru" data-i18n="lang_ru">RU</button>
+          <button class="nav-link" data-lang="en" data-i18n="lang_en">EN</button>
         </nav>
       </div>
     </header>
 
     <main class="container section">
-      <h1>О проекте</h1>
+      <h1 data-i18n="about_title">О проекте</h1>
       <div class="card">
-        <p>
-          BigChanger Dev — это простой каталог разработчиков и digital-специалистов, где заказчики
-          находят исполнителей и связываются с ними напрямую.
-        </p>
-        <p>
-          Цель MVP: проверить спрос, понять интерес разработчиков к размещению профилей и оценить
-          потребность заказчиков в таком формате поиска.
-        </p>
-        <p class="muted">Проект создан командой BigChanger как быстрый запуск гипотезы.</p>
+        <p data-i18n="about_p1">BigChanger Dev — это каталог разработчиков и digital-специалистов, где заказчики находят исполнителей и связываются с ними напрямую.</p>
+        <p data-i18n="about_p2">Цель MVP: проверить спрос, понять интерес разработчиков к размещению профилей и оценить потребность заказчиков в таком формате поиска.</p>
+        <p class="muted" data-i18n="about_p3">Проект создан командой BigChanger как быстрый запуск гипотезы.</p>
       </div>
     </main>
 
     <footer class="footer">
-      <div class="container">© BigChanger Dev MVP</div>
+      <div class="container" data-i18n="footer">© BigChanger Dev MVP</div>
     </footer>
+    <script src="js/i18n.js"></script>
+    <script>initLanguageSwitcher();</script>
   </body>
 </html>

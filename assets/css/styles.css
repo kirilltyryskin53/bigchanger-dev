@@ -229,3 +229,21 @@ textarea {
     height: 120px;
   }
 }
+
+
+label {
+  display: grid;
+  gap: 0.4rem;
+}
+
+button.btn {
+  font: inherit;
+}
+
+.success-text {
+  color: #3ddc97;
+}
+
+.error-text {
+  color: #ff7f7f;
+}

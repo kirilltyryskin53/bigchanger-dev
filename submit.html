@@ -3,39 +3,70 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Добавить профиль — BigChanger Dev</title>
+    <title>BigChanger Dev Submit</title>
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body>
     <header class="header">
       <div class="container nav">
-        <a class="brand" href="index.html">BigChanger Dev</a>
+        <a class="brand" href="index.html" data-i18n="brand">BigChanger Dev</a>
         <nav class="nav-links">
-          <a class="nav-link" href="index.html">Главная</a>
-          <a class="nav-link" href="developers.html">Каталог</a>
-          <a class="nav-link active" href="submit.html">Добавить профиль</a>
-          <a class="nav-link" href="about.html">О проекте</a>
+          <a class="nav-link" href="index.html" data-i18n="nav_home">Главная</a>
+          <a class="nav-link" href="developers.html" data-i18n="nav_catalog">Каталог</a>
+          <a class="nav-link active" href="submit.html" data-i18n="nav_submit">Добавить профиль</a>
+          <a class="nav-link" href="about.html" data-i18n="nav_about">О проекте</a>
+          <button class="nav-link" data-lang="ru" data-i18n="lang_ru">RU</button>
+          <button class="nav-link" data-lang="en" data-i18n="lang_en">EN</button>
         </nav>
       </div>
     </header>
 
     <main class="container section">
-      <h1>Добавить профиль</h1>
-      <p class="muted">MVP-режим: анкеты принимаются через внешнюю форму.</p>
+      <h1 data-i18n="submit_title">Добавить профиль</h1>
+      <p class="muted" data-i18n="submit_desc">Заполните анкету. Профиль будет отправлен на модерацию.</p>
 
-      <div class="card">
-        <p class="notice">
-          Заполните форму, и после проверки профиль будет добавлен в каталог.
-        </p>
-        <div class="actions" style="margin-top: 1rem">
-          <a class="btn primary" href="https://forms.gle/" target="_blank" rel="noopener noreferrer">Открыть форму</a>
-          <a class="btn" href="mailto:hello@bigchanger.dev">Отправить на email</a>
+      <form id="submitForm" class="card grid" novalidate>
+        <label><span data-i18n="field_name">Имя или ник *</span><input class="input" name="name" required /></label>
+        <label><span data-i18n="field_country">Страна *</span><input class="input" name="country" required /></label>
+        <label><span data-i18n="field_spec">Специализация *</span><input class="input" name="specialization" required /></label>
+
+        <label>
+          <span data-i18n="field_level">Уровень *</span>
+          <select name="level" required>
+            <option value="">-</option>
+            <option>Junior</option>
+            <option>Middle</option>
+            <option>Senior</option>
+          </select>
+        </label>
+
+        <label><span data-i18n="field_bio">Кратко о себе *</span><textarea name="bio" required></textarea></label>
+        <label><span data-i18n="field_stack">Стек (через запятую)</span><input class="input" name="stack" /></label>
+        <label><span data-i18n="field_languages">Языки общения (через запятую)</span><input class="input" name="languages" /></label>
+        <label><span data-i18n="field_format">Формат работы</span><input class="input" name="work_format" /></label>
+        <label><span data-i18n="field_exp">Опыт (лет)</span><input class="input" name="experience_years" type="number" min="0" /></label>
+        <label><span data-i18n="field_avatar">Ссылка на аватар</span><input class="input" name="avatar" type="url" /></label>
+
+        <label><span data-i18n="field_tg">Telegram</span><input class="input" name="telegram" /></label>
+        <label><span data-i18n="field_discord">Discord</span><input class="input" name="discord" /></label>
+        <label><span data-i18n="field_email">Email</span><input class="input" name="email" type="email" /></label>
+        <label><span data-i18n="field_github">GitHub</span><input class="input" name="github" /></label>
+        <label><span data-i18n="field_site">Сайт</span><input class="input" name="website" /></label>
+        <label><span data-i18n="field_portfolio">Портфолио</span><input class="input" name="portfolio" /></label>
+
+        <div class="actions">
+          <button class="btn primary" type="submit" data-i18n="submit_btn">Отправить профиль</button>
         </div>
-      </div>
+        <p id="formMessage" class="muted"></p>
+      </form>
     </main>
 
     <footer class="footer">
-      <div class="container">© BigChanger Dev MVP</div>
+      <div class="container" data-i18n="footer">© BigChanger Dev MVP</div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/submit.js"></script>
   </body>
 </html>

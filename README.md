@@ -1,17 +1,22 @@
 # BigChanger Dev (MVP)
 
-Статический MVP-каталог разработчиков для GitHub Pages.
+Static MVP catalog connected to Supabase.
 
-## Страницы
-- `index.html` — главная
-- `developers.html` — каталог с фильтрами
-- `developer-profile.html` — страница профиля
-- `submit.html` — добавление профиля (через внешнюю форму)
-- `about.html` — о проекте
+## Pages
+- `index.html` — home
+- `developers.html` — public catalog (loads only approved profiles from Supabase)
+- `developer-profile.html` — public profile page by id (Supabase)
+- `submit.html` — on-site developer submission form (writes to Supabase with `status: pending`)
+- `about.html` — about project
 
-## Данные
-- `data/developers.json` — профили разработчиков
+## JavaScript
+- `js/supabase.js` — Supabase initialization with public anon key
+- `js/catalog.js` — catalog loading/filtering from Supabase
+- `js/profile.js` — profile loading from Supabase
+- `js/submit.js` — submission + validation + insert pending profile
+- `js/i18n.js` — RU/EN language support
 
-## Локальный запуск
-Откройте `index.html` через локальный сервер (например, `python3 -m http.server 8080`),
-чтобы корректно работал `fetch` JSON-файла.
+## Notes
+- Uses only Supabase Project URL + ANON key in frontend.
+- Do not use service role key in static client code.
+- `data/developers.json` is intentionally empty (no fake/sample data in UI).
